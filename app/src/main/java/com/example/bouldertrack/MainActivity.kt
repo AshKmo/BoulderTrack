@@ -1,6 +1,7 @@
 package com.example.bouldertrack
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,9 +25,9 @@ class MainActivity : AppCompatActivity() {
             R.id.chalkUpButton,
             R.id.gripButton
         )) {
-            val button: Button = findViewById<Button>(buttonId)
+            val button: Button = findViewById(buttonId)
             button.setOnClickListener {
-                println(button.text.toString())
+                Log.i(this::class.simpleName, "Button labelled '${button.text.toString()}' pushed")
             }
         }
     }

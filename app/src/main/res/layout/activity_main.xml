@@ -7,34 +7,119 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/titleBar"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#007176"
-        android:minHeight="?attr/actionBarSize"
-        android:paddingTop="20dp"
-        android:theme="?attr/actionBarTheme"
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/title"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/title_text"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="113dp"
-            tools:layout_editor_absoluteY="30dp" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/background"
+            android:contentDescription="A background image depicting a blue sky with clouds" />
 
-    </androidx.appcompat.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/titleBar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:minHeight="?attr/actionBarSize"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/title_text"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:autoSizeTextType="uniform"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#c6000000"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hold #"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="99"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="120sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Streak Bonus: "
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoSizeTextType="uniform"
+                            android:text="3"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:orientation="vertical"
@@ -93,8 +178,7 @@
 
                 <Space
                     android:layout_width="130dp"
-                    android:layout_height="0dp"
-                    />
+                    android:layout_height="0dp" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/gripButton"
@@ -109,8 +193,7 @@
 
                 <Space
                     android:layout_width="130dp"
-                    android:layout_height="0dp"
-                    />
+                    android:layout_height="0dp" />
             </LinearLayout>
 
         </RelativeLayout>
